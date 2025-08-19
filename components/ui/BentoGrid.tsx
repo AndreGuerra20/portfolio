@@ -1,6 +1,13 @@
+'use client'
 import { cn } from "@/lib/utils";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import { GlobeDemo } from "./GridGlobe";
+import { useState } from "react";
+import Lottie from "react-lottie";
+import animationData from "@/data/confetti.json";
+import MagicButton from "./MagicButton";
+import { IoCopyOutline } from "react-icons/io5";
+
 
 export const BentoGrid = ({
   className,
@@ -40,8 +47,15 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
+  const [copied, setCopied] = useState(false);
   const leftLists = ["ReactJS", "Express", "Typescript"];
   const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("andremrguerra@gmail.com");
+    setCopied(true);
+    //setTimeout(() => setCopied(false), 2000);
+  };
   return (
     <div
       className={cn(
@@ -53,7 +67,7 @@ export const BentoGridItem = ({
         backgroundColor: "linear-gradient(135deg, #000319, #0A0F4D, #3A0CA3, #A78BFA)",
       }}
     >
-      <div className={`${id === 6} && 'flex justify-center h-full'`}>
+      <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
           {img && (
             <img
@@ -73,11 +87,9 @@ export const BentoGridItem = ({
           )}
         </div>
         {id === 6 && (
-          <BackgroundGradientAnimation>
-            <div className="absolute z-50 flex items-center justify-center text-white font-bold"/>
-          </BackgroundGradientAnimation>
+          <BackgroundGradientAnimation/>
         )}
-        <div className={cn(titleClassName, "group-hover/bento:translate-y-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg-p10")}>
+        <div className={cn(titleClassName, "group-hover/bento:translate-y-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5")}>
           <div className="font-sans font-extralight text-[#c1c2d3] text-sm md:text-xs lg:text-base z-10">
             {description}
           </div>
@@ -91,26 +103,34 @@ export const BentoGridItem = ({
                 {leftLists.map((item, i) => (
                   <span
                     key={i}
-                    className="py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-70 rounded-lg text-center bg-[#10132E]"
+                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
+                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
                   >
                     {item}
                   </span>
                 ))}
-                <span className="py-4 px-3 rounded-lg text-center bg-[#10132E]"></span>
+                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
               </div>
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                <span className="py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
                 {rightLists.map((item, i) => (
                   <span
                     key={i}
-                    className="py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-70 rounded-lg text-center bg-[#10132E]"
+                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
+                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
                   >
                     {item}
                   </span>
                 ))}
               </div>
+            </div>
+          )}
+          {id === 6 && (
+            <div className="relative mt-5 sm:mt-2 md:mt-0">
+              <div className={`absolute -bottom-5 right-0`}>
+                <Lottie options={{loop: copied, autoplay: copied, animationData, rendererSettings: {preserveAspectRatio: "xMidYMid slice"}}}/>
+              </div>
+              <MagicButton title={copied ? 'Email Copied' : 'Copy my Email'} icon={<IoCopyOutline/>} position="left" otherClasses="!bg-[#161a31]" handleClick={handleCopy}/>
             </div>
           )}
         </div>
