@@ -48,13 +48,22 @@ export const BentoGridItem = ({
   spareImg?: string;
 }) => {
   const [copied, setCopied] = useState(false);
+  const [playAnimation, setPlayAnimation] = useState(false);
+  const [animationKey, setAnimationKey] = useState(0);
   const leftLists = ["ReactJS", "Express", "Typescript"];
   const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
 
   const handleCopy = () => {
     navigator.clipboard.writeText("andremrguerra@gmail.com");
     setCopied(true);
-    //setTimeout(() => setCopied(false), 2000);
+    
+    setAnimationKey(prev => prev + 1);
+    setPlayAnimation(true);
+    
+    setTimeout(() => {
+      setCopied(false);
+      setPlayAnimation(false);
+    }, 2000);
   };
   return (
     <div
@@ -128,7 +137,15 @@ export const BentoGridItem = ({
           {id === 6 && (
             <div className="relative mt-5 sm:mt-2 md:mt-0">
               <div className={`absolute -bottom-5 right-0`}>
-                <Lottie options={{loop: copied, autoplay: copied, animationData, rendererSettings: {preserveAspectRatio: "xMidYMid slice"}}}/>
+                <Lottie 
+                  key={animationKey}
+                  options={{
+                    loop: false, 
+                    autoplay: playAnimation, 
+                    animationData, 
+                    rendererSettings: {preserveAspectRatio: "xMidYMid slice"}
+                  }}
+                />
               </div>
               <MagicButton title={copied ? 'Email Copied' : 'Copy my Email'} icon={<IoCopyOutline/>} position="left" otherClasses="!bg-[#161a31]" handleClick={handleCopy}/>
             </div>
