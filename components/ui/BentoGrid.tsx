@@ -54,7 +54,7 @@ export const BentoGridItem = ({
   const rightLists = ["Autopsy", "Kali Linux", "Hashcat"];
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("andremrguerra@gmail.com");
+    navigator.clipboard.writeText("andre.r.guerra@ipleiria.pt");
     setCopied(true);
     
     setAnimationKey(prev => prev + 1);
