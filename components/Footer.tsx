@@ -22,7 +22,7 @@ const Footer = () => {
                                     backdrop-filter backdrop-blur-lg saturate-180 
                                     bg-opacity-75 rounded-lg border border-black-300
                                     transition hover:scale-110">
-                            <img src={profile.img} alt={profile.id} width={20} height={20} />
+                            <img src={profile.img} alt={profile.id.toString()} width={20} height={20} />
                         </a>
                         ))}
             </div>
