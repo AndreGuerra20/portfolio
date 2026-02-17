@@ -50,8 +50,8 @@ export const BentoGridItem = ({
   const [copied, setCopied] = useState(false);
   const [playAnimation, setPlayAnimation] = useState(false);
   const [animationKey, setAnimationKey] = useState(0);
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
+  const leftLists = ["Next.JS", "Bluetooth LE", "Threat Modeling"];
+  const rightLists = ["Autopsy", "Kali Linux", "Hashcat"];
 
   const handleCopy = () => {
     navigator.clipboard.writeText("andremrguerra@gmail.com");

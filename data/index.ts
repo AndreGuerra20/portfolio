@@ -8,7 +8,7 @@ export const navItems = [
 export const gridItems = [
   {
     id: 1,
-    title: "I prioritize client collaboration, fostering open communication ",
+    title: "I design secure and scalable architectures for blockchain, IoT and AI systems ",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -18,7 +18,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "I'm very flexible with time zone communications",
+    title: "Experience collaborating in research and technical teams across academia and industry.",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -38,7 +38,7 @@ export const gridItems = [
   },
   {
     id: 4,
-    title: "Tech enthusiast with a passion for development.",
+    title: "Security-first mindset with a strong foundation in threat modeling and risk analysis.",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -49,7 +49,7 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently building a JS Animation library",
+    title: "Currently researching secure BLE communication and Self-Sovereign Identity (SSI) credential management.",
     description: "The Inside Scoop",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
@@ -59,7 +59,7 @@ export const gridItems = [
   },
   {
     id: 6,
-    title: "Do you want to start a project together?",
+    title: "Interested in secure system design, blockchain or IoT research collaboration?",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -72,35 +72,35 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-    img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://github.com/adrianhajdin?tab=repositories",
+    title: "Security Analysis of Bluetooth Low Energy in IoT Devices",
+    des: "Experimental evaluation of BLE security modes using ESP32 devices. Includes AES-GCM application-layer encryption, packet sniffing with nRF52840, performance benchmarking and attack surface analysis.",
+    img: "/ble_security_analysis.svg",
+    iconLists: ["/Bluetooth.svg", "/esp32.svg", "/Wireshark.svg", "/C.svg", "/C++.svg"],
+    link: "https://github.com/AndreGuerra20/Security-Analysis-of-Bluetooth-Low-Energy-Communication-in-IOT-Devices",
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://github.com/adrianhajdin/zoom-clone",
+    title: "Pmei",
+    des: "Enterprise platform for monitoring smart packaging equipped with sensors, enabling real-time telemetry processing and order status visibility across logistics and operations",
+    img: "/projetoDAE.png",
+    iconLists: ["/java.svg", "/js.svg", "/vue.svg", "/tail.svg", "/postgresql.svg", "/dock.svg"],
+    link: "https://github.com/AndreGuerra20/ProjetoDAE",
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-    img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://github.com/adrianhajdin/ai_saas_app",
+    title: "Memory Game",
+    des: "Multiplayer memory game built with Vue, featuring a grid of cards that players flip to find matching pairs. Backend implemented with Laravel, providing user authentication and game state management.",
+    img: "/projetoDAD.png",
+    iconLists: ["/Laravel.svg", "/php.svg", "/vue.svg", "/js.svg", "/tail.svg"],
+    link: "https://github.com/ddinis-pt/DAD",
   },
   {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://github.com/adrianhajdin/iphone",
+    title: "SOMIOD",
+    des: "Service Oriented Middleware for Interoperability and Open Data ",
+    img: "/somiod.png",
+    iconLists: ["/c_sharp.svg", "/dotnet.svg", "mqtt.png", "ms_sql_server.svg"],
+    link: "https://github.com/ddinis-pt/IS",
   },
 ];
 
