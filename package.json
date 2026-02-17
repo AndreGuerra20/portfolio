@@ -9,7 +9,7 @@
     "lint": "next lint",
     "build": "next build",
     "postbuild": "node -e \"require('fs').writeFileSync('out/.nojekyll','')\"",
-    "deploy": "npm run build && gh-pages -d out --dotfiles"
+    "deploy": "bun run build && bunx gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "@react-three/drei": "^9.105.4",
