@@ -216,7 +216,7 @@ export const portfolioTranslations = {
           title: "Análise de Segurança de Bluetooth Low Energy em Dispositivos IoT",
           des: "Avaliação experimental de modos de segurança BLE com dispositivos ESP32. Inclui encriptação AES-GCM na camada aplicacional, captura de pacotes com nRF52840, benchmark de desempenho e análise da superfície de ataque.",
           img: "/portfolio/ble_security_analysis.svg",
-          iconLists: ["/portfolio/Bluetooth.svg", "/portfolio/esp32.svg", "/portfolio/Wireshark.svg", "/portfolio/C.svg", "/portfolio/C++.svg"],
+          iconLists: ["/portfolio/Bluetooth.svg", "/portfolio/esp32.svg", "/portfolio/Wireshark.svg", "/portfolio/c.svg", "/portfolio/C++.svg"],
           link: "https://tinyurl.com/BLE-Research",
         },
         {
@@ -342,7 +342,7 @@ export const portfolioTranslations = {
           title: "Sicherheitsanalyse von Bluetooth Low Energy in IoT-Geräten",
           des: "Experimentelle Bewertung von BLE-Sicherheitsmodi mit ESP32-Geräten. Enthält AES-GCM-Verschlüsselung auf Anwendungsebene, Paketmitschnitt mit nRF52840, Performance-Benchmarking und Analyse der Angriffsfläche.",
           img: "/portfolio/ble_security_analysis.svg",
-          iconLists: ["/portfolio/Bluetooth.svg", "/portfolio/esp32.svg", "/portfolio/Wireshark.svg", "/portfolio/C.svg", "/portfolio/C++.svg"],
+          iconLists: ["/portfolio/Bluetooth.svg", "/portfolio/esp32.svg", "/portfolio/Wireshark.svg", "/portfolio/c.svg", "/portfolio/C++.svg"],
           link: "https://tinyurl.com/BLE-Research",
         },
         {
@@ -468,7 +468,7 @@ export const portfolioTranslations = {
           title: "Analyse de sécurité du Bluetooth Low Energy sur des appareils IoT",
           des: "Évaluation expérimentale des modes de sécurité BLE avec des appareils ESP32. Inclut le chiffrement AES-GCM au niveau applicatif, la capture de paquets avec nRF52840, le benchmarking de performance et l'analyse de la surface d'attaque.",
           img: "/portfolio/ble_security_analysis.svg",
-          iconLists: ["/portfolio/Bluetooth.svg", "/portfolio/esp32.svg", "/portfolio/Wireshark.svg", "/portfolio/C.svg", "/portfolio/C++.svg"],
+          iconLists: ["/portfolio/Bluetooth.svg", "/portfolio/esp32.svg", "/portfolio/Wireshark.svg", "/portfolio/c.svg", "/portfolio/C++.svg"],
           link: "https://tinyurl.com/BLE-Research",
         },
         {
