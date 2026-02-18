@@ -37,24 +37,22 @@ const LanguageToggle = ({ mobile = false }: LanguageToggleProps) => {
   }, []);
 
   if (mobile) {
+    const currentIndex = languages.findIndex((language) => language.value === locale);
+    const safeIndex = currentIndex >= 0 ? currentIndex : 0;
+    const nextLanguage = languages[(safeIndex + 1) % languages.length];
+
     return (
-      <div className="flex items-center gap-1 sm:hidden">
-        {languages.map((language) => (
-          <button
-            key={language.value}
-            type="button"
-            onClick={() => setLocale(language.value)}
-            aria-label={`Switch language to ${language.label}`}
-            className={`rounded-md border px-2 py-1 text-xs transition-colors ${
-              locale === language.value
-                ? "border-purple text-purple bg-white/10"
-                : "border-white/30 text-white hover:border-purple hover:text-purple"
-            }`}
-          >
-            <span className="mr-1">{language.flag}</span>
-            <span>{language.value.toUpperCase()}</span>
-          </button>
-        ))}
+      <div className="sm:hidden">
+        <button
+          type="button"
+          onClick={() => setLocale(nextLanguage.value)}
+          aria-label={`Switch language to ${nextLanguage.label}`}
+          className="rounded-md border border-purple bg-white/10 px-2 py-1 text-xs text-purple transition-colors hover:bg-white/20"
+          title={`Next language: ${nextLanguage.label}`}
+        >
+          <span className="mr-1">{currentLanguage.flag}</span>
+          <span>{currentLanguage.value.toUpperCase()}</span>
+        </button>
       </div>
     );
   }
