@@ -6,7 +6,7 @@ import { Locale, portfolioTranslations } from "@/data/i18n";
 type LanguageContextType = {
   locale: Locale;
   setLocale: (locale: Locale) => void;
-  t: typeof portfolioTranslations.en;
+  t: typeof portfolioTranslations[keyof typeof portfolioTranslations];
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
