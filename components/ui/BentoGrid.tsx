@@ -7,7 +7,7 @@ import Lottie from "react-lottie";
 import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
-
+import { useLanguage } from "@/context/language-context";
 
 export const BentoGrid = ({
   className,
@@ -47,6 +47,7 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
+  const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
   const [playAnimation, setPlayAnimation] = useState(false);
   const [animationKey, setAnimationKey] = useState(0);
@@ -147,7 +148,7 @@ export const BentoGridItem = ({
                   }}
                 />
               </div>
-              <MagicButton title={copied ? 'Email Copied' : 'Copy my Email'} icon={<IoCopyOutline/>} position="left" otherClasses="!bg-[#161a31]" handleClick={handleCopy}/>
+              <MagicButton title={copied ? t.grid.copiedEmail : t.grid.copyEmail} icon={<IoCopyOutline/>} position="left" otherClasses="!bg-[#161a31]" handleClick={handleCopy}/>
             </div>
           )}
         </div>

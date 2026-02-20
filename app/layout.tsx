@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "./provider";
+import { AppProvider } from "./provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Portfolio André Guerra",
   description: "Welcome to my portfolio website showcasing my work and projects.",
+   icons: {
+    icon: "/portfolio/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -18,14 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider
+        <AppProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
           >
             {children}
-          </ThemeProvider>
+          </AppProvider>
       </body>
     </html>
   );
