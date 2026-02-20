@@ -24,6 +24,8 @@ The admin area is available at `/admin` (or `/portfolio/admin` when deployed wit
   - Detailed temperature/humidity for the current day.
 - Extra cards: active users, weekly visits, yearly visits and conversion rate.
 
+- Active users/visits are tracked in-memory via heartbeat pings (`/api/traffic/ping`), without storing data in Supabase tables.
+
 ### Required environment variables
 
 Set these in `.env.local` for production-safe credentials:

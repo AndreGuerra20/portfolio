@@ -1,3 +1,5 @@
+import { getTrafficSnapshot } from "@/lib/traffic-presence";
+
 export type SensorPoint = {
   iso: string;
   temperature: number;
@@ -27,9 +29,7 @@ function toPoint(reading: SupabaseReading): SensorPoint {
 }
 
 function sortByDate(points: SensorPoint[]) {
-  return [...points].sort(
-    (a, b) => new Date(a.iso).getTime() - new Date(b.iso).getTime(),
-  );
+  return [...points].sort((a, b) => new Date(a.iso).getTime() - new Date(b.iso).getTime());
 }
 
 function groupByHour(points: SensorPoint[]) {
@@ -63,22 +63,6 @@ function groupByHour(points: SensorPoint[]) {
   );
 }
 
-function getTrafficFromReadings(readings: SensorPoint[]) {
-  const now = Date.now();
-  const oneWeek = 7 * 24 * 60 * 60 * 1000;
-  const oneYear = 365 * 24 * 60 * 60 * 1000;
-
-  const weeklyVisits = readings.filter((point) => now - new Date(point.iso).getTime() <= oneWeek).length;
-  const yearlyVisits = readings.filter((point) => now - new Date(point.iso).getTime() <= oneYear).length;
-
-  return {
-    activeUsers: Math.max(1, Math.min(weeklyVisits, 12)),
-    weeklyVisits,
-    yearlyVisits,
-    conversionRate: yearlyVisits > 0 ? Number(((weeklyVisits / yearlyVisits) * 100).toFixed(2)) : 0,
-  };
-}
-
 export async function fetchSensorDashboardData() {
   const response = await fetch(SUPABASE_URL, {
     headers: {
@@ -106,6 +90,6 @@ export async function fetchSensorDashboardData() {
   return {
     weekly,
     today,
-    traffic: getTrafficFromReadings(allPoints),
+    traffic: getTrafficSnapshot(),
   };
 }
