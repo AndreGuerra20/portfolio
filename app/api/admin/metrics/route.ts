@@ -17,7 +17,6 @@ export async function GET() {
             user: session.email,
             weekly: metrics.weeklyReadings,
             today: metrics.dailyReadings,
-            generatedAt: new Date().toISOString(),
         });
     } catch (error) {
         console.error("Erro ao carregar os dados da supabase:", error);
