@@ -10,6 +10,9 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Admin Dashboard
 
+
+> ⚠️ The admin area uses Next.js Route Handlers, cookies and middleware, so it requires a server runtime (it is not compatible with static-only export hosting).
+
 The admin area is available at `/admin` (or `/portfolio/admin` when deployed with basePath) and includes:
 
 - Email/password authentication.

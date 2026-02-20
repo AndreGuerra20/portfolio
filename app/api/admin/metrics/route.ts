@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { NextResponse } from "next/server";
 import { getAdminSessionFromCookies } from "@/lib/admin-auth";
 import { fetchSensorDashboardData } from "@/lib/admin-metrics";
