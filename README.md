@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Security Notice - Static Admin on GitHub Pages
 
-## Getting Started
+This project is configured for **static deployment** (GitHub Pages), with no backend.
 
-First, run the development server:
+## Quick Summary
+
+The current `/admin` area is **not secure for real production use**.
+
+It exists only for visual dashboard demonstration purposes, because in a 100% static app there is no way to hide secrets or validate sessions on the server.
+
+## Why It Is Insecure
+
+1. **Client-Side Authentication**
+   - Login validation happens in the browser (frontend), not on a server.
+   - Anyone can inspect or bypass the logic using DevTools.
+
+2. **Session Stored in localStorage**
+   - The authenticated state is stored in `localStorage`.
+   - An attacker can forge this value and directly access the dashboard.
+
+3. **`NEXT_PUBLIC_*` Variables Are Public**
+   - Anything defined as `NEXT_PUBLIC_*` is included in the JavaScript bundle.
+   - This includes values used in the "admin" and the Supabase public key.
+
+4. **No Backend = No Real Secrets**
+   - On GitHub Pages there is no server-side code to store passwords, private tokens, or validate HttpOnly cookies.
+
+5. **Hashing on the Frontend Does Not Solve It**
+   - Even if the password is hashed, the hash is still exposed in the client.
+   - Authentication remains bypassable without server-side validation.
+
+## What Is Acceptable in This Architecture
+
+- Use only **public data**.
+- Use only the Supabase **publishable/anon key**.
+- Enforce strict **RLS policies** in Supabase.
+- Treat `/admin` as a UI demo, not a secure control panel.
+
+## If You Need a Truly Secure Admin Panel
+
+### Deploy on Vercel
+
+You must move authentication to a backend with runtime support (e.g. Vercel, Render, Fly, Railway), including:
+
+- Server-side credential validation,
+- Session management using HttpOnly cookies,
+- Rate limiting / brute-force protection,
+- Secrets stored outside the frontend,
+- Protected server-side endpoints.
+
+You can try the `Feature-Admin-Dashboard` branch for these purpose.
+
+## Current Deployment
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun run deploy
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This command publishes only static content to GitHub Pages.
