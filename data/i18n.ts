@@ -44,7 +44,7 @@ export const portfolioTranslations = {
           imgClassName: "",
           titleClassName: "justify-center",
           img: "",
-          spareImg: "",
+          spareImg: "/portfolio/grid.svg",
         },
         {
           id: 4,
@@ -170,7 +170,7 @@ export const portfolioTranslations = {
           imgClassName: "",
           titleClassName: "justify-center",
           img: "",
-          spareImg: "",
+          spareImg: "/portfolio/grid.svg",
         },
         {
           id: 4,
@@ -296,7 +296,7 @@ export const portfolioTranslations = {
           imgClassName: "",
           titleClassName: "justify-center",
           img: "",
-          spareImg: "",
+          spareImg: "/portfolio/grid.svg",
         },
         {
           id: 4,
@@ -422,7 +422,7 @@ export const portfolioTranslations = {
           imgClassName: "",
           titleClassName: "justify-center",
           img: "",
-          spareImg: "",
+          spareImg: "/portfolio/grid.svg",
         },
         {
           id: 4,
