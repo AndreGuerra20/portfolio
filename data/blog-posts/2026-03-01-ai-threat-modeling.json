@@ -1,0 +1,12 @@
+{
+  "slug": "ai-threat-modeling-practical",
+  "title": "Threat Modeling Aplicado a Sistemas com IA",
+  "date": "2026-03-01",
+  "summary": "Checklist de riscos para pipelines de dados e modelos de machine learning em produção.",
+  "tags": ["AI", "Threat Modeling", "Security"],
+  "content": [
+    "Validar origem e integridade de datasets reduz risco de data poisoning.",
+    "A monitorização de drift e de abuso por prompts maliciosos deve ser contínua após o deploy.",
+    "Definir limites de autorização por serviço evita exposição indevida de modelos e segredos."
+  ]
+}

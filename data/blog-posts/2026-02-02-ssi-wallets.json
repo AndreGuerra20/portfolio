@@ -1,0 +1,12 @@
+{
+  "slug": "ssi-wallets-and-credentials",
+  "title": "SSI Wallets: Gestão de Credenciais Verificáveis",
+  "date": "2026-02-02",
+  "summary": "Como organizar emissão e verificação de credenciais num sistema Self-Sovereign Identity.",
+  "tags": ["SSI", "Blockchain", "Identity"],
+  "content": [
+    "Separar os papéis de emissor, titular e verificador simplifica o desenho de fluxos de confiança.",
+    "A rotação de chaves e a revogação de credenciais devem estar previstas desde o início do projeto.",
+    "Uma boa experiência de utilizador no wallet é tão importante quanto os mecanismos criptográficos."
+  ]
+}

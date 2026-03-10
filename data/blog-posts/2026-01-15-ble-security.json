@@ -1,0 +1,12 @@
+{
+  "slug": "ble-security-iot-devices",
+  "title": "Reforçar Segurança BLE em Dispositivos IoT",
+  "date": "2026-01-15",
+  "summary": "Lições práticas ao proteger dispositivos ESP32 que comunicam via Bluetooth Low Energy.",
+  "tags": ["IoT", "BLE", "Cibersegurança"],
+  "content": [
+    "A autenticação em BLE reduz o risco de dispositivos não autorizados se ligarem ao ecossistema.",
+    "A encriptação ao nível aplicacional (ex.: AES-GCM) ajuda a manter confidencialidade mesmo quando o canal base está comprometido.",
+    "Monitorizar métricas de energia e latência permite equilibrar segurança e performance em cenários reais."
+  ]
+}
